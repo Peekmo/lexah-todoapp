@@ -78,9 +78,7 @@ controller_TodoController.prototype = {
 		this.scope.create = function() {
 			_g.create(Reflect.field(_g.scope,"new_todo"));
 		};
-		this.scope["delete"] = function(id) {
-			_g["delete"](id);
-		};
+		this.scope["delete"] = $bind(this,this["delete"]);
 	}
 };
 var model_Todo = function(value) {
