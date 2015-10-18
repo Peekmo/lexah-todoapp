@@ -1,0 +1,14 @@
+module model
+
+##*
+    Model of a todo thing
+*##
+class self
+
+var id: Float
+var value: String
+
+def new(value: String)
+    @id = Date.now().getTime()
+    @value = value
+end

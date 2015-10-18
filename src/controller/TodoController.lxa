@@ -1,7 +1,12 @@
+module controller
+
 require "angular/*"
 require "angular/support/*"
 require "angular/service/*"
 
+##*
+    Controller of the whole app
+*##
 class self
 
 def new(scope: Scope)

@@ -1,6 +1,8 @@
 require "angular/*"
 require "angular/support/*"
 require "angular/service/*"
+require "model/*"
+require "controller/*"
 
 class self
 
