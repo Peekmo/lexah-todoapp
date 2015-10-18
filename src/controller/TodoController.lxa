@@ -3,12 +3,26 @@ module controller
 require "angular/*"
 require "angular/support/*"
 require "angular/service/*"
+require "model/Todo"
 
 ##*
     Controller of the whole app
 *##
 class self
 
+![private] var scope: Scope
+![private] var todos: Array<Todo>
+
 def new(scope: Scope)
-    scope.set("data", "Hello")
+    @scope = scope
+    @init_app()
+end
+
+![private] def init_app(): Void
+    @todos = Array<Todo>.new()
+    for value in ["My todo", "My second todo"].iterator() do
+        @todos.push(Todo.new(value))
+    end
+
+    @scope.set("todos", @todos)
 end

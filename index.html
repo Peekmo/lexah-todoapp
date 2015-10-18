@@ -6,8 +6,15 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="index.js"></script>
-        <p>
-            {{ data }}
-        </p>
+        <table>
+            <tr>
+                <th>Name</th>
+            </tr>
+            <tr ng-repeat="item in todos">
+                <td>
+                    {{ item.value }}
+                </td>
+            </tr>
+        </table>
     </body>
 </html>
