@@ -9,10 +9,14 @@
         <table border="1">
             <tr>
                 <th>Name</th>
+                <th>Action</th>
             </tr>
             <tr ng-repeat="item in todos">
                 <td>
                     {{ item.value }}
+                </td>
+                <td>
+                    <button ng-click="delete(item.id)">Delete</button>
                 </td>
             </tr>
         </table>

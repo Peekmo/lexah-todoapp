@@ -25,6 +25,15 @@ def create(value: String)
     end
 end
 
+def delete(id: Float)
+    for todo in @todos.iterator() do
+        if todo.id == id then
+            @todos.remove(todo)
+            break
+        end
+    end
+end
+
 ![private] def init_app(): Void
     @todos = Array<Todo>.new()
     for value in ["My todo", "My second todo"].iterator() do
@@ -34,5 +43,8 @@ end
     @scope.set("todos", @todos)
     @scope.set("create", do()
         @create(@scope.get("new_todo"))
+    end)
+    @scope.set("delete", do(id: Float)
+        @delete(id)
     end)
 end
