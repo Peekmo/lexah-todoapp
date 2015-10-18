@@ -1,0 +1,9 @@
+require "angular/*"
+require "angular/support/*"
+require "angular/service/*"
+
+class self
+
+def new(scope: Scope)
+    scope.set("data", "Hello")
+end

@@ -1,0 +1,12 @@
+require "angular/*"
+require "angular/support/*"
+require "angular/service/*"
+
+class self
+
+![public, static]
+def main()
+    var mod = Angular
+        .module("todoapp", [])
+        .controller("TodoController", TodoController.new)
+end

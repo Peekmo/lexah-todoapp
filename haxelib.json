@@ -1,0 +1,13 @@
+{
+  "name": "todoapp",
+  "url" : "https://github.com/Peekmo/lexah-todoapp",
+  "license": "MIT",
+  "tags": ["js"],
+  "description": "Angular TODO app written in lexah.",
+  "version": "0.0.0",
+  "releasenote": "TODO.",
+  "contributors": ["peekmo"],
+  "dependencies": {
+    "angular.haxe": "0.0.6"
+  }
+}

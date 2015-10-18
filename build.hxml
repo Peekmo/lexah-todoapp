@@ -1,0 +1,6 @@
+-cmd haxelib run lexah -s src -d dist
+--next
+-lib angular.haxe
+-cp dist
+-main Main
+-js index.js
