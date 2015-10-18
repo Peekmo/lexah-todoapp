@@ -19,11 +19,20 @@ def new(scope: Scope)
     @init_app()
 end
 
+def create(value: String)
+    if value != "" and value != null then
+        @todos.push(Todo.new(value))
+    end
+end
+
 ![private] def init_app(): Void
     @todos = Array<Todo>.new()
     for value in ["My todo", "My second todo"].iterator() do
-        @todos.push(Todo.new(value))
+        @create(value)
     end
 
     @scope.set("todos", @todos)
+    @scope.set("create", do()
+        @create(@scope.get("new_todo"))
+    end)
 end

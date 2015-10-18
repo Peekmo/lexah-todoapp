@@ -35,15 +35,21 @@ var controller_TodoController = function(scope) {
 	this.init_app();
 };
 controller_TodoController.prototype = {
-	init_app: function() {
+	create: function(value) {
+		if(value != "" && value != null) this.todos.push(new model_Todo(value));
+	}
+	,init_app: function() {
+		var _g = this;
 		this.todos = [];
 		var $it0 = HxOverrides.iter(["My todo","My second todo"]);
 		while( $it0.hasNext() ) {
 			var value = $it0.next();
-			this.todos.push(new model_Todo(value));
+			this.create(value);
 		}
 		this.scope.todos = this.todos;
-		console.log(Reflect.field(this.scope,"todos"));
+		this.scope.create = function() {
+			_g.create(Reflect.field(_g.scope,"new_todo"));
+		};
 	}
 };
 var model_Todo = function(value) {
